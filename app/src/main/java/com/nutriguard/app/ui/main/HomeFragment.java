@@ -1,9 +1,9 @@
 package com.nutriguard.app.ui.main;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,15 +14,22 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.journeyapps.barcodescanner.CaptureActivity;
+import com.journeyapps.barcodescanner.ScanContract;
+import com.journeyapps.barcodescanner.ScanOptions;
 import com.nutriguard.app.R;
 import com.nutriguard.app.data.api.OpenFoodFactsApiService;
 import com.nutriguard.app.data.api.RetrofitClient;
@@ -40,12 +47,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Home & Explorer Fragment: search, category chips, demo barcodes, and live results.
+ * Home & Explorer Fragment: camera barcode scanner, text search, and live product results.
  */
 public class HomeFragment extends Fragment implements ProductAdapter.OnProductClickListener {
 
     private EditText editSearchQuery;
     private ImageView btnBarcodeSearch;
+    private ImageView btnCameraScan;
+    private MaterialCardView cardHeroScanner;
     private RecyclerView recyclerProducts;
     private SwipeRefreshLayout swipeRefreshLayout;
     private LinearLayout layoutLoading;
@@ -59,8 +68,32 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
     private UserPreferences userPrefs;
     private OpenFoodFactsApiService apiService;
 
-    private String currentQuery = "bio"; // default initial query to populate feed
+    private String currentQuery = "bio";
     private Call<?> currentCall;
+
+    // ZXing Camera Barcode Scanner Launcher
+    private final ActivityResultLauncher<ScanOptions> barcodeScannerLauncher = registerForActivityResult(
+            new ScanContract(),
+            result -> {
+                if (result != null && result.getContents() != null) {
+                    String scannedCode = result.getContents();
+                    editSearchQuery.setText(scannedCode);
+                    fetchBarcode(scannedCode);
+                }
+            }
+    );
+
+    // Camera runtime permission launcher
+    private final ActivityResultLauncher<String> cameraPermissionLauncher = registerForActivityResult(
+            new ActivityResultContracts.RequestPermission(),
+            isGranted -> {
+                if (isGranted) {
+                    startCameraScan();
+                } else {
+                    Toast.makeText(requireContext(), R.string.camera_permission_required, Toast.LENGTH_LONG).show();
+                }
+            }
+    );
 
     @Nullable
     @Override
@@ -79,6 +112,8 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
         // Bind Views
         editSearchQuery = view.findViewById(R.id.editSearchQuery);
         btnBarcodeSearch = view.findViewById(R.id.btnBarcodeSearch);
+        btnCameraScan = view.findViewById(R.id.btnCameraScan);
+        cardHeroScanner = view.findViewById(R.id.cardHeroScanner);
         recyclerProducts = view.findViewById(R.id.recyclerProducts);
         swipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout);
         layoutLoading = view.findViewById(R.id.layoutLoading);
@@ -92,7 +127,12 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
         adapter = new ProductAdapter(this, userPrefs);
         recyclerProducts.setAdapter(adapter);
 
-        // Search edit text listeners
+        // Camera Scanner Listeners
+        View.OnClickListener cameraClickListener = v -> checkCameraAndScan();
+        btnCameraScan.setOnClickListener(cameraClickListener);
+        cardHeroScanner.setOnClickListener(cameraClickListener);
+
+        // Search text listeners
         editSearchQuery.setOnEditorActionListener((v, actionId, event) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH ||
                     (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN)) {
@@ -107,14 +147,12 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
             if (!query.isEmpty() && query.matches("\\d+")) {
                 fetchBarcode(query);
             } else {
-                Toast.makeText(requireContext(), "Entrez un code-barres numérique (ex: 3017620422003)", Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Entrez un code-barres numérique ou utilisez la caméra", Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Setup Demo Barcode Chips
+        // Setup Demo Barcode Chips & Categories
         setupDemoBarcodeChips(view);
-
-        // Setup Category Filter Chips
         setupCategoryChips(view);
 
         // Swipe to Refresh
@@ -127,10 +165,26 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
         performSearch(currentQuery);
     }
 
+    private void checkCameraAndScan() {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            startCameraScan();
+        } else {
+            cameraPermissionLauncher.launch(Manifest.permission.CAMERA);
+        }
+    }
+
+    private void startCameraScan() {
+        ScanOptions options = new ScanOptions();
+        options.setPrompt(getString(R.string.zxing_prompt));
+        options.setBeepEnabled(true);
+        options.setOrientationLocked(false);
+        options.setCaptureActivity(CaptureActivity.class);
+        barcodeScannerLauncher.launch(options);
+    }
+
     @Override
     public void onResume() {
         super.onResume();
-        // Refresh adapter to re-evaluate allergen warnings if user updated preferences
         if (adapter != null) {
             adapter.notifyDataSetChanged();
         }
@@ -177,7 +231,7 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
         }
         currentQuery = query;
 
-        // If numeric, search directly by barcode
+        // If numeric code, search by barcode directly
         if (query.matches("\\d{8,14}")) {
             fetchBarcode(query);
             return;
@@ -251,7 +305,7 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
         });
     }
 
-    private void fetchBarcode(String barcode) {
+    public void fetchBarcode(String barcode) {
         showLoading();
         if (currentCall != null) {
             currentCall.cancel();
@@ -272,7 +326,6 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
                     List<Product> list = new ArrayList<>();
                     list.add(product);
                     showResults(list);
-                    // Automatically open detail for barcode direct query
                     onProductClick(product);
                 } else {
                     showEmpty();
@@ -324,10 +377,7 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
 
     @Override
     public void onProductClick(Product product) {
-        // Save to offline history
         productDao.addToHistory(product);
-
-        // Launch Detail Activity
         Intent intent = new Intent(requireContext(), ProductDetailActivity.class);
         intent.putExtra(ProductDetailActivity.EXTRA_PRODUCT, product);
         startActivity(intent);

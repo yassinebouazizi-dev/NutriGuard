@@ -5,10 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginHorizontal="12dp"
-    android:layout_marginVertical="4dp"
-    app:cardCornerRadius="14dp"
-    app:cardElevation="1dp"
+    android:layout_marginHorizontal="14dp"
+    android:layout_marginVertical="5dp"
+    app:cardBackgroundColor="@color/surface_light"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
     app:strokeColor="@color/card_stroke"
     app:strokeWidth="1dp">
 
@@ -17,8 +18,8 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="14dp"
-        android:paddingVertical="12dp">
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="14dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -39,7 +40,7 @@
                 android:id="@+id/txtAllergenKeywords"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="3dp"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp"
                 tools:text="Blé, orge, seigle, avoine, épeautre" />

@@ -8,6 +8,12 @@
     <string name="nav_favorites">Mes Favoris</string>
     <string name="nav_profile">Mon Profil Santé</string>
 
+    <!-- Camera Scanner -->
+    <string name="scan_hero_title">Scanner avec la caméra</string>
+    <string name="scan_hero_subtitle">Pointez l\'emballage pour une analyse instantanée</string>
+    <string name="camera_permission_required">L\'autorisation d\'accès à la caméra est requise pour scanner un produit.</string>
+    <string name="zxing_prompt">Placez le code-barres du produit dans le cadre</string>
+
     <!-- Home / Search Screen -->
     <string name="search_hint">Rechercher un aliment ou code-barres...</string>
     <string name="quick_categories">Catégories populaires</string>
@@ -18,7 +24,7 @@
     <string name="category_bio">Bio &amp; Éco</string>
     <string name="category_biscuits">Biscuits</string>
 
-    <string name="quick_test_barcodes">Codes-barres de démonstration</string>
+    <string name="quick_test_barcodes">Codes-barres rapides de démonstration</string>
     <string name="demo_nutella">Nutella (Ferrero)</string>
     <string name="demo_barilla">Pâtes Barilla</string>
     <string name="demo_coca">Coca-Cola</string>
@@ -31,15 +37,15 @@
     <string name="retry">Réessayer</string>
 
     <!-- Detail Screen -->
-    <string name="product_detail_title">Détail du Produit</string>
+    <string name="product_detail_title">Fiche Produit</string>
     <string name="brand_label">Marque :</string>
     <string name="quantity_label">Quantité :</string>
     <string name="barcode_label">Code-barres :</string>
-    <string name="ingredients_title">Liste des ingrédients</string>
+    <string name="ingredients_title">Ingrédients</string>
     <string name="no_ingredients">Ingrédients non renseignés pour ce produit.</string>
 
     <!-- Health Radar / Scores -->
-    <string name="health_scores_title">Indices Santé &amp; Écologie</string>
+    <string name="health_scores_title">Indices Santé &amp; Environnement</string>
     <string name="nutriscore_title">Nutri-Score</string>
     <string name="nova_title">Groupe NOVA</string>
     <string name="ecoscore_title">Éco-Score</string>
@@ -70,15 +76,15 @@
 
     <!-- Profile Screen -->
     <string name="profile_header_title">Vos Restrictions &amp; Allergies</string>
-    <string name="profile_header_subtitle">Cochez les ingrédients auxquels vous êtes allergique ou intolérant. NutriGuard vous alertera dès qu\'un produit en contient.</string>
+    <string name="profile_header_subtitle">Cochez les ingrédients à surveiller. NutriGuard vous alertera dès qu\'un produit en contient.</string>
     <string name="allergen_gluten">Gluten / Blé</string>
     <string name="allergen_milk">Lait / Lactose</string>
     <string name="allergen_peanuts">Arachides / Cacahuètes</string>
-    <string name="allergen_nuts">Fruits à coque (Noix, Noisettes, Amandes)</string>
+    <string name="allergen_nuts">Fruits à coque (Noisettes, Noix, Amandes)</string>
     <string name="allergen_eggs">Œufs</string>
     <string name="allergen_soybeans">Soja</string>
     <string name="allergen_fish">Poissons</string>
-    <string name="allergen_crustaceans">Crustacés / Fruits de mer</string>
+    <string name="allergen_crustaceans">Crustacés &amp; Mollusques</string>
     <string name="allergen_mustard">Moutarde</string>
     <string name="allergen_sesame">Graines de sésame</string>
     <string name="allergen_celery">Céleri</string>
@@ -91,7 +97,7 @@
     <string name="tab_favorites">Favoris</string>
     <string name="tab_history">Historique</string>
     <string name="empty_favorites_title">Aucun favori enregistré</string>
-    <string name="empty_favorites_subtitle">Appuyez sur le bouton cœur dans la fiche d\'un produit pour l\'ajouter ici.</string>
+    <string name="empty_favorites_subtitle">Appuyez sur le cœur dans la fiche d\'un produit pour l\'ajouter ici.</string>
     <string name="empty_history_title">Historique vide</string>
     <string name="empty_history_subtitle">Les produits que vous consultez apparaîtront ici.</string>
     <string name="clear_history">Effacer l\'historique</string>
