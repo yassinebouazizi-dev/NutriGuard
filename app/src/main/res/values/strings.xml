@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NutriGuard</string>
+    <string name="tagline">Votre protecteur nutritionnel et allergènes</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Explorer</string>
+    <string name="nav_favorites">Mes Favoris</string>
+    <string name="nav_profile">Mon Profil Santé</string>
+
+    <!-- Home / Search Screen -->
+    <string name="search_hint">Rechercher un aliment ou code-barres...</string>
+    <string name="quick_categories">Catégories populaires</string>
+    <string name="category_beverages">Boissons</string>
+    <string name="category_snacks">Snacks</string>
+    <string name="category_cereals">Céréales</string>
+    <string name="category_dairy">Produits Laitiers</string>
+    <string name="category_bio">Bio &amp; Éco</string>
+    <string name="category_biscuits">Biscuits</string>
+
+    <string name="quick_test_barcodes">Codes-barres de démonstration</string>
+    <string name="demo_nutella">Nutella (Ferrero)</string>
+    <string name="demo_barilla">Pâtes Barilla</string>
+    <string name="demo_coca">Coca-Cola</string>
+    <string name="demo_oats">Flocons d\'avoine Bio</string>
+
+    <string name="search_results_title">Résultats de recherche</string>
+    <string name="no_results">Aucun produit trouvé pour cette recherche.</string>
+    <string name="search_loading">Recherche en cours sur Open Food Facts...</string>
+    <string name="network_error">Erreur de connexion. Vérifiez votre accès Internet.</string>
+    <string name="retry">Réessayer</string>
+
+    <!-- Detail Screen -->
+    <string name="product_detail_title">Détail du Produit</string>
+    <string name="brand_label">Marque :</string>
+    <string name="quantity_label">Quantité :</string>
+    <string name="barcode_label">Code-barres :</string>
+    <string name="ingredients_title">Liste des ingrédients</string>
+    <string name="no_ingredients">Ingrédients non renseignés pour ce produit.</string>
+
+    <!-- Health Radar / Scores -->
+    <string name="health_scores_title">Indices Santé &amp; Écologie</string>
+    <string name="nutriscore_title">Nutri-Score</string>
+    <string name="nova_title">Groupe NOVA</string>
+    <string name="ecoscore_title">Éco-Score</string>
+
+    <string name="nova_desc_1">Aliments non transformés ou peu transformés</string>
+    <string name="nova_desc_2">Ingrédients culinaires transformés</string>
+    <string name="nova_desc_3">Aliments transformés</string>
+    <string name="nova_desc_4">Produits alimentaires ultra-transformés</string>
+    <string name="score_not_available">Non disponible</string>
+
+    <!-- Nutrition Table -->
+    <string name="nutrition_table_title">Valeurs nutritionnelles (pour 100g / 100ml)</string>
+    <string name="nutrient_energy">Énergie (Calories)</string>
+    <string name="nutrient_fat">Matières grasses</string>
+    <string name="nutrient_saturated_fat">dont acides gras saturés</string>
+    <string name="nutrient_carbs">Glucides</string>
+    <string name="nutrient_sugars">dont sucres</string>
+    <string name="nutrient_fiber">Fibres alimentaires</string>
+    <string name="nutrient_proteins">Protéines</string>
+    <string name="nutrient_salt">Sel</string>
+
+    <!-- Allergen Warning Banners -->
+    <string name="allergen_danger_title">⚠️ Attention : Incompatibilité Détectée !</string>
+    <string name="allergen_safe_title">✅ Produit compatible avec votre profil</string>
+    <string name="allergen_safe_subtitle">Aucun allergène déclaré parmi vos restrictions.</string>
+    <string name="allergen_unconfigured_title">ℹ️ Profil allergène non configuré</string>
+    <string name="allergen_unconfigured_subtitle">Configurez vos allergies dans l\'onglet \"Mon Profil Santé\".</string>
+
+    <!-- Profile Screen -->
+    <string name="profile_header_title">Vos Restrictions &amp; Allergies</string>
+    <string name="profile_header_subtitle">Cochez les ingrédients auxquels vous êtes allergique ou intolérant. NutriGuard vous alertera dès qu\'un produit en contient.</string>
+    <string name="allergen_gluten">Gluten / Blé</string>
+    <string name="allergen_milk">Lait / Lactose</string>
+    <string name="allergen_peanuts">Arachides / Cacahuètes</string>
+    <string name="allergen_nuts">Fruits à coque (Noix, Noisettes, Amandes)</string>
+    <string name="allergen_eggs">Œufs</string>
+    <string name="allergen_soybeans">Soja</string>
+    <string name="allergen_fish">Poissons</string>
+    <string name="allergen_crustaceans">Crustacés / Fruits de mer</string>
+    <string name="allergen_mustard">Moutarde</string>
+    <string name="allergen_sesame">Graines de sésame</string>
+    <string name="allergen_celery">Céleri</string>
+    <string name="allergen_palmoil">Huile de palme</string>
+
+    <string name="profile_saved_toast">Préférences enregistrées avec succès !</string>
+    <string name="profile_reset_btn">Tout désélectionner</string>
+
+    <!-- Favorites / History Screen -->
+    <string name="tab_favorites">Favoris</string>
+    <string name="tab_history">Historique</string>
+    <string name="empty_favorites_title">Aucun favori enregistré</string>
+    <string name="empty_favorites_subtitle">Appuyez sur le bouton cœur dans la fiche d\'un produit pour l\'ajouter ici.</string>
+    <string name="empty_history_title">Historique vide</string>
+    <string name="empty_history_subtitle">Les produits que vous consultez apparaîtront ici.</string>
+    <string name="clear_history">Effacer l\'historique</string>
+    <string name="history_cleared">Historique effacé.</string>
+    <string name="fav_added">Produit ajouté aux favoris !</string>
+    <string name="fav_removed">Produit retiré des favoris.</string>
+    <string name="share_product_text">Découvrez ce produit sur NutriGuard : %1$s de %2$s. Nutri-Score : %3$s.</string>
+</resources>
