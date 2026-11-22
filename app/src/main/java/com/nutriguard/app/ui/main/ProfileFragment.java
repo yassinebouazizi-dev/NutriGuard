@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -11,7 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.material.button.MaterialButton;
 import com.nutriguard.app.R;
 import com.nutriguard.app.data.model.Allergen;
 import com.nutriguard.app.data.preferences.UserPreferences;
@@ -24,7 +24,7 @@ import java.util.List;
 public class ProfileFragment extends Fragment {
 
     private TextView badgeActiveCount;
-    private MaterialButton btnResetAllergens;
+    private View btnResetAllergens;
     private RecyclerView recyclerAllergens;
 
     private UserPreferences userPrefs;
@@ -54,12 +54,14 @@ public class ProfileFragment extends Fragment {
         });
         recyclerAllergens.setAdapter(adapter);
 
-        btnResetAllergens.setOnClickListener(v -> {
-            userPrefs.clearAll();
-            adapter.notifyDataSetChanged();
-            updateBadgeCount();
-            Toast.makeText(requireContext(), "Toutes les restrictions ont été réinitialisées.", Toast.LENGTH_SHORT).show();
-        });
+        if (btnResetAllergens != null) {
+            btnResetAllergens.setOnClickListener(v -> {
+                userPrefs.clearAll();
+                adapter.notifyDataSetChanged();
+                updateBadgeCount();
+                Toast.makeText(requireContext(), "Toutes les restrictions ont été réinitialisées.", Toast.LENGTH_SHORT).show();
+            });
+        }
 
         updateBadgeCount();
     }
