@@ -7,17 +7,31 @@
     android:layout_height="match_parent"
     android:background="@color/background_light">
 
-    <!-- Top Tab Selector -->
+    <!-- Top Title -->
+    <TextView
+        android:id="@+id/txtFavScreenTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="Mes Favoris"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Top Tab Selector (Rounded Pill Style) -->
     <com.google.android.material.button.MaterialButtonToggleGroup
         android:id="@+id/toggleGroupFavorites"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="12dp"
         app:checkedButton="@id/btnTabFavorites"
         app:selectionRequired="true"
         app:singleSelection="true"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/txtFavScreenTitle">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnTabFavorites"
@@ -27,6 +41,7 @@
             android:layout_weight="1"
             android:text="⭐ Favoris"
             android:textColor="@color/primary"
+            app:cornerRadius="20dp"
             android:textAllCaps="false" />
 
         <com.google.android.material.button.MaterialButton
@@ -37,18 +52,19 @@
             android:layout_weight="1"
             android:text="🕒 Historique"
             android:textColor="@color/text_secondary"
+            app:cornerRadius="20dp"
             android:textAllCaps="false" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <!-- Header bar with counter and optional clear button -->
+    <!-- Header bar with counter and clear button -->
     <LinearLayout
         android:id="@+id/layoutSubHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
+        android:paddingHorizontal="20dp"
         android:paddingVertical="8dp"
         app:layout_constraintTop_toBottomOf="@id/toggleGroupFavorites">
 
@@ -82,7 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:clipToPadding="false"
-        android:paddingBottom="16dp"
+        android:paddingBottom="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutSubHeader"
         tools:listitem="@layout/item_product" />

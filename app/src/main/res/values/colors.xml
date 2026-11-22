@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Modern Emerald Health Palette -->
-    <color name="primary">#059669</color>
-    <color name="primary_dark">#047857</color>
-    <color name="primary_light">#10B981</color>
-    <color name="primary_container">#D1FAE5</color>
-    <color name="on_primary_container">#065F46</color>
+    <!-- Medical Teal & Soft Mint Palette (Dribbble Health UI Style) -->
+    <color name="primary">#0B7A75</color>
+    <color name="primary_dark">#065753</color>
+    <color name="primary_light">#169B95</color>
+    <color name="primary_container">#D5EBE7</color>
+    <color name="on_primary_container">#044340</color>
 
-    <color name="secondary">#0D9488</color>
-    <color name="secondary_dark">#0F766E</color>
-    <color name="secondary_light">#14B8A6</color>
+    <!-- Secondary Teal & Accent -->
+    <color name="secondary">#11999E</color>
+    <color name="secondary_dark">#0D777B</color>
+    <color name="secondary_light">#40B5B9</color>
+    <color name="secondary_container">#E5F5F5</color>
 
-    <!-- Crisp, bright surfaces (No muddy grays) -->
-    <color name="background_light">#F8FAFC</color>
+    <!-- Backgrounds & Surfaces (Soft Pastel Mint & Crisp White) -->
+    <color name="background_light">#F1F5F4</color>
     <color name="surface_light">#FFFFFF</color>
     <color name="surface_elevated">#FFFFFF</color>
-    <color name="card_stroke">#E2E8F0</color>
-    <color name="search_background">#FFFFFF</color>
+    <color name="card_mint_bg">#E2F0EC</color>
+    <color name="card_stroke">#E6EFEA</color>
+    <color name="card_stroke_subtle">#F0F5F2</color>
 
-    <!-- Sharp, high-contrast typography -->
-    <color name="text_primary">#0F172A</color>
-    <color name="text_secondary">#475569</color>
-    <color name="text_hint">#94A3B8</color>
+    <!-- Typography (Slate & Navy) -->
+    <color name="text_primary">#132228</color>
+    <color name="text_secondary">#5B6E76</color>
+    <color name="text_hint">#96A6AC</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
@@ -31,14 +34,14 @@
     <color name="nutriscore_c">#FECB02</color>
     <color name="nutriscore_d">#EE8100</color>
     <color name="nutriscore_e">#E63E11</color>
-    <color name="nutriscore_unknown">#94A3B8</color>
+    <color name="nutriscore_unknown">#96A6AC</color>
 
     <!-- Nova Groups Colors -->
     <color name="nova_1">#038141</color>
     <color name="nova_2">#FECB02</color>
     <color name="nova_3">#EE8100</color>
     <color name="nova_4">#E63E11</color>
-    <color name="nova_unknown">#94A3B8</color>
+    <color name="nova_unknown">#96A6AC</color>
 
     <!-- Eco-Score Colors -->
     <color name="ecoscore_a">#1E8F4E</color>
@@ -46,16 +49,16 @@
     <color name="ecoscore_c">#F1C40F</color>
     <color name="ecoscore_d">#E67E22</color>
     <color name="ecoscore_e">#E74C3C</color>
-    <color name="ecoscore_unknown">#94A3B8</color>
+    <color name="ecoscore_unknown">#96A6AC</color>
 
-    <!-- Allergen & Status Alerts (Clean, modern pastel + strong text) -->
-    <color name="alert_danger_bg">#FEE2E2</color>
-    <color name="alert_danger_text">#DC2626</color>
+    <!-- Allergen & Status Alerts -->
+    <color name="alert_danger_bg">#FEE8E8</color>
+    <color name="alert_danger_text">#D32F2F</color>
     <color name="alert_danger_border">#FCA5A5</color>
 
-    <color name="alert_safe_bg">#DCFCE7</color>
-    <color name="alert_safe_text">#16A34A</color>
-    <color name="alert_safe_border">#86EFAC</color>
+    <color name="alert_safe_bg">#DDF5EB</color>
+    <color name="alert_safe_text">#0B7A75</color>
+    <color name="alert_safe_border">#A2DFC9</color>
 
     <color name="alert_warning_bg">#FEF3C7</color>
     <color name="alert_warning_text">#D97706</color>

@@ -47,10 +47,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
- * Home & Explorer Fragment: camera barcode scanner, text search, and live product results.
+ * Home & Explorer Fragment with modern medical UI and Camera Barcode Scanner.
  */
 public class HomeFragment extends Fragment implements ProductAdapter.OnProductClickListener {
 
+    private ImageView btnHeaderCamera;
     private EditText editSearchQuery;
     private ImageView btnBarcodeSearch;
     private ImageView btnCameraScan;
@@ -110,6 +111,7 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
         apiService = RetrofitClient.getApiService();
 
         // Bind Views
+        btnHeaderCamera = view.findViewById(R.id.btnHeaderCamera);
         editSearchQuery = view.findViewById(R.id.editSearchQuery);
         btnBarcodeSearch = view.findViewById(R.id.btnBarcodeSearch);
         btnCameraScan = view.findViewById(R.id.btnCameraScan);
@@ -131,6 +133,9 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
         View.OnClickListener cameraClickListener = v -> checkCameraAndScan();
         btnCameraScan.setOnClickListener(cameraClickListener);
         cardHeroScanner.setOnClickListener(cameraClickListener);
+        if (btnHeaderCamera != null) {
+            btnHeaderCamera.setOnClickListener(cameraClickListener);
+        }
 
         // Search text listeners
         editSearchQuery.setOnEditorActionListener((v, actionId, event) -> {
@@ -231,7 +236,6 @@ public class HomeFragment extends Fragment implements ProductAdapter.OnProductCl
         }
         currentQuery = query;
 
-        // If numeric code, search by barcode directly
         if (query.matches("\\d{8,14}")) {
             fetchBarcode(query);
             return;
