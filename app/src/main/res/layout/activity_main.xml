@@ -11,21 +11,20 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="72dp" />
+        android:layout_marginBottom="56dp" />
 
-    <!-- Modern Floating Pill Bottom Navigation Bar -->
+    <!-- Grab-style Crisp White Bottom Navigation Bar with Grab Green Accents -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_gravity="bottom"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="14dp"
-        android:background="@drawable/bg_floating_bottom_nav"
+        android:background="@color/surface_light"
         app:elevation="8dp"
         app:itemIconSize="22dp"
         app:itemIconTint="@color/primary"
         app:itemTextColor="@color/primary"
+        app:itemRippleColor="@color/primary_container"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />
 

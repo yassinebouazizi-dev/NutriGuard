@@ -18,74 +18,74 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="80dp">
+            android:paddingBottom="70dp">
 
-            <!-- Top Profile & Greeting Header -->
+            <!-- Grab-style Top Header Bar with Logo, Greeting & Scanner Action -->
             <LinearLayout
                 android:id="@+id/layoutTopHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/surface_light"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingHorizontal="18dp"
-                android:paddingTop="14dp"
-                android:paddingBottom="8dp">
+                android:paddingHorizontal="16dp"
+                android:paddingTop="12dp"
+                android:paddingBottom="10dp">
 
                 <ImageView
                     android:id="@+id/imgAvatarHeader"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:src="@drawable/ic_avatar_user"
-                    android:contentDescription="Profil" />
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:src="@drawable/ic_nutriguard_logo"
+                    android:contentDescription="@string/app_name" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
+                    android:layout_marginStart="10dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bonjour, Yassine 👋"
-                        android:textColor="@color/text_primary"
-                        android:textSize="17sp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/primary"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
-                        android:text="Mangez sain &amp; en sécurité"
+                        android:text="Bonjour, Yassine 👋 • Mangez sainement"
                         android:textColor="@color/text_secondary"
-                        android:textSize="12sp" />
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
-                <!-- Round Camera Quick Action -->
+                <!-- Round Camera Quick Action (Grab Header Icon Style) -->
                 <ImageView
                     android:id="@+id/btnHeaderCamera"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
                     android:background="@drawable/bg_circle_icon"
                     android:contentDescription="Scanner"
-                    android:padding="9dp"
+                    android:padding="8dp"
                     android:src="@drawable/ic_camera"
                     app:tint="@color/primary" />
 
             </LinearLayout>
 
-            <!-- Search Input Card -->
+            <!-- Grab-style Search Input Card -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="18dp"
-                android:layout_marginTop="8dp"
-                app:cardBackgroundColor="@color/surface_light"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="10dp"
+                app:cardBackgroundColor="@color/search_background"
                 app:cardCornerRadius="24dp"
-                app:cardElevation="2dp"
+                app:cardElevation="0dp"
                 app:strokeColor="@color/card_stroke"
                 app:strokeWidth="1dp">
 
@@ -121,22 +121,22 @@
 
                     <ImageView
                         android:id="@+id/btnBarcodeSearch"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="Code-barres"
-                        android:padding="5dp"
+                        android:padding="4dp"
                         android:src="@drawable/ic_barcode"
                         app:tint="@color/primary" />
 
                     <ImageView
                         android:id="@+id/btnCameraScan"
-                        android:layout_width="34dp"
-                        android:layout_height="34dp"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:layout_marginStart="4dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="Scanner caméra"
-                        android:padding="6dp"
+                        android:padding="5dp"
                         android:src="@drawable/ic_camera"
                         app:tint="@color/primary" />
 
@@ -144,25 +144,25 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Featured Teal Hero Card -->
+            <!-- Grab-style Hero Promo Banner (Scanner Card) -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardHeroScanner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="18dp"
-                android:layout_marginTop="14dp"
-                app:cardCornerRadius="26dp"
-                app:cardElevation="4dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
                 app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_teal_hero"
+                    android:background="@drawable/bg_hero_scanner"
                     android:orientation="vertical"
-                    android:padding="18dp">
+                    android:padding="16dp">
 
-                    <!-- Top status row -->
+                    <!-- Top row -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -172,11 +172,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/bg_floating_bottom_nav"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="4dp"
-                            android:text="⭐ Scan Rapide"
-                            android:textColor="@color/primary"
+                            android:background="@drawable/bg_rounded_card"
+                            android:backgroundTint="#26FFFFFF"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="3dp"
+                            android:text="⚡ Scan Immédiat"
+                            android:textColor="@color/white"
                             android:textSize="11sp"
                             android:textStyle="bold" />
 
@@ -186,12 +187,13 @@
                             android:layout_weight="1" />
 
                         <ImageView
-                            android:layout_width="34dp"
-                            android:layout_height="34dp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
                             android:background="@drawable/bg_circle_icon"
-                            android:padding="8dp"
+                            android:backgroundTint="#26FFFFFF"
+                            android:padding="6dp"
                             android:src="@drawable/ic_camera"
-                            app:tint="@color/primary"
+                            app:tint="@color/white"
                             android:contentDescription="Caméra" />
 
                     </LinearLayout>
@@ -199,30 +201,31 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
+                        android:layout_marginTop="10dp"
                         android:text="Scanner avec la caméra"
                         android:textColor="@color/white"
-                        android:textSize="18sp"
+                        android:textSize="17sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Pointez le code-barres d'un aliment pour une analyse instantanée du Nutri-Score et des allergènes."
-                        android:textColor="#E0F2F1"
+                        android:layout_marginTop="3dp"
+                        android:text="Pointez l\'emballage pour une détection instantanée des allergènes et du Nutri-Score."
+                        android:textColor="#E8F8EE"
                         android:textSize="12sp" />
 
-                    <!-- Bottom Action Pill Button -->
+                    <!-- Grab-style Pill Action Button -->
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:background="@drawable/bg_floating_bottom_nav"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_rounded_card"
+                        android:backgroundTint="@color/white"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:paddingHorizontal="16dp"
-                        android:paddingVertical="8dp">
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="7dp">
 
                         <ImageView
                             android:layout_width="16dp"
@@ -234,10 +237,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:text="OUVRIR LE SCANNER"
+                            android:layout_marginStart="6dp"
+                            android:text="SCANNER MAINTENANT"
                             android:textColor="@color/primary"
-                            android:textSize="12sp"
+                            android:textSize="11sp"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -246,13 +249,13 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Quick Barcode Shortcuts Scroll -->
+            <!-- Quick Demo Barcode Shortcuts (Grab Quick Services Row) -->
             <HorizontalScrollView
                 android:id="@+id/scrollDemoBarcodes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:paddingHorizontal="14dp"
+                android:paddingHorizontal="12dp"
                 android:scrollbars="none">
 
                 <com.google.android.material.chip.ChipGroup
@@ -267,6 +270,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="🍫 Nutella"
+                        android:textColor="@color/text_primary"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -275,6 +280,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="🥤 Coca-Cola"
+                        android:textColor="@color/text_primary"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -283,6 +290,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="🍝 Pâtes Barilla"
+                        android:textColor="@color/text_primary"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -291,6 +300,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="💧 Eau Évian"
+                        android:textColor="@color/text_primary"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -299,39 +310,49 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="🍪 Prince Lu"
+                        android:textColor="@color/text_primary"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                 </com.google.android.material.chip.ChipGroup>
 
             </HorizontalScrollView>
 
-            <!-- Section Title Row -->
+            <!-- Grab-style Section Header -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="12dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingHorizontal="18dp">
+                android:paddingHorizontal="16dp">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Aliments &amp; Résultats"
+                    android:text="Aliments &amp; Produits"
                     android:textColor="@color/text_primary"
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Catégories"
+                    android:textColor="@color/primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
-            <!-- Category Filter Chips -->
+            <!-- Category Filter Chips (Grab Filter Row) -->
             <HorizontalScrollView
                 android:id="@+id/scrollCategories"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
-                android:paddingHorizontal="14dp"
+                android:paddingHorizontal="12dp"
                 android:scrollbars="none">
 
                 <com.google.android.material.chip.ChipGroup
@@ -348,6 +369,7 @@
                         android:layout_height="wrap_content"
                         android:checked="true"
                         android:text="Tous"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -356,6 +378,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/category_beverages"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -364,6 +387,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/category_snacks"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -372,6 +396,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/category_cereals"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -380,6 +405,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/category_dairy"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                     <com.google.android.material.chip.Chip
@@ -388,6 +414,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/category_biscuits"
+                        app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
 
                 </com.google.android.material.chip.ChipGroup>
@@ -404,14 +431,14 @@
                 android:visibility="gone">
 
                 <ProgressBar
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:indeterminateTint="@color/primary" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/search_loading"
                     android:textColor="@color/text_secondary"
                     android:textSize="13sp" />
@@ -422,15 +449,15 @@
             <LinearLayout
                 android:id="@+id/layoutError"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="140dp"
                 android:layout_marginHorizontal="32dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:visibility="gone">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
                     android:src="@drawable/ic_warning"
                     app:tint="@color/text_secondary" />
 
@@ -438,7 +465,7 @@
                     android:id="@+id/txtErrorMessage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="6dp"
                     android:gravity="center"
                     android:text="@string/network_error"
                     android:textColor="@color/text_secondary"
@@ -449,7 +476,7 @@
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/retry"
                     android:textColor="@color/primary"
                     app:cornerRadius="16dp"
@@ -461,7 +488,7 @@
             <LinearLayout
                 android:id="@+id/layoutEmpty"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="130dp"
                 android:layout_marginHorizontal="32dp"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -471,12 +498,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="🔍"
-                    android:textSize="36sp" />
+                    android:textSize="32sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="6dp"
                     android:gravity="center"
                     android:text="@string/no_results"
                     android:textColor="@color/text_secondary"
@@ -484,7 +511,7 @@
 
             </LinearLayout>
 
-            <!-- Main Products List RecyclerView -->
+            <!-- Products List RecyclerView -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerProducts"
                 android:layout_width="match_parent"

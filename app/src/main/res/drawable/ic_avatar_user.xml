@@ -5,10 +5,10 @@
     android:viewportHeight="24">
     <!-- Circular avatar background (Standard cubic beziers, 100% crash-safe) -->
     <path
-        android:fillColor="#D5EBE7"
+        android:fillColor="#E8F8EE"
         android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z"/>
-    <!-- Person silhouette -->
+    <!-- Person silhouette in Grab Green -->
     <path
-        android:fillColor="#0B7A75"
+        android:fillColor="#00B14F"
         android:pathData="M12,6c1.93,0 3.5,1.57 3.5,3.5S13.93,13 12,13s-3.5,-1.57 -3.5,-3.5S10.07,6 12,6zM12,15c2.7,0 5.8,1.29 6,2v1H6v-1c0.2,-0.71 3.3,-2 6,-2z"/>
 </vector>
