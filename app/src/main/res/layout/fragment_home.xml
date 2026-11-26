@@ -57,7 +57,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bonjour, Yassine 👋 • Mangez sainement"
+                        android:text="Assistant nutritionnel &amp; santé"
                         android:textColor="@color/text_secondary"
                         android:textSize="11sp" />
 
@@ -176,7 +176,7 @@
                             android:backgroundTint="#26FFFFFF"
                             android:paddingHorizontal="8dp"
                             android:paddingVertical="3dp"
-                            android:text="⚡ Scan Immédiat"
+                            android:text="Scan Immédiat"
                             android:textColor="@color/white"
                             android:textSize="11sp"
                             android:textStyle="bold" />
@@ -269,7 +269,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Action"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🍫 Nutella"
+                        android:text="Nutella"
                         android:textColor="@color/text_primary"
                         app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
@@ -279,7 +279,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Action"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🥤 Coca-Cola"
+                        android:text="Coca-Cola"
                         android:textColor="@color/text_primary"
                         app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
@@ -289,7 +289,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Action"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🍝 Pâtes Barilla"
+                        android:text="Pâtes Barilla"
                         android:textColor="@color/text_primary"
                         app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
@@ -299,7 +299,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Action"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="💧 Eau Évian"
+                        android:text="Eau Évian"
                         android:textColor="@color/text_primary"
                         app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
@@ -309,7 +309,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Action"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🍪 Prince Lu"
+                        android:text="Prince Lu"
                         android:textColor="@color/text_primary"
                         app:chipCornerRadius="16dp"
                         android:textSize="12sp" />
@@ -494,11 +494,12 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🔍"
-                    android:textSize="32sp" />
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="@color/text_hint"
+                    android:contentDescription="@string/no_results" />
 
                 <TextView
                     android:layout_width="wrap_content"

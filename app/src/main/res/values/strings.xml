@@ -68,10 +68,10 @@
     <string name="nutrient_salt">Sel</string>
 
     <!-- Allergen Warning Banners -->
-    <string name="allergen_danger_title">⚠️ Attention : Incompatibilité Détectée !</string>
-    <string name="allergen_safe_title">✅ Produit compatible avec votre profil</string>
+    <string name="allergen_danger_title">Attention : Incompatibilité Détectée !</string>
+    <string name="allergen_safe_title">Produit compatible avec votre profil</string>
     <string name="allergen_safe_subtitle">Aucun allergène déclaré parmi vos restrictions.</string>
-    <string name="allergen_unconfigured_title">ℹ️ Profil allergène non configuré</string>
+    <string name="allergen_unconfigured_title">Profil allergène non configuré</string>
     <string name="allergen_unconfigured_subtitle">Configurez vos allergies dans l\'onglet \"Mon Profil Santé\".</string>
 
     <!-- Profile Screen -->

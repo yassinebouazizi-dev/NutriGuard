@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ public class FavoritesFragment extends Fragment implements ProductAdapter.OnProd
     private TextView btnClearHistory;
     private RecyclerView recyclerFavorites;
     private LinearLayout layoutEmptyState;
-    private TextView iconEmpty;
+    private ImageView iconEmpty;
     private TextView txtEmptyTitle;
     private TextView txtEmptySubtitle;
 
@@ -96,7 +97,7 @@ public class FavoritesFragment extends Fragment implements ProductAdapter.OnProd
             btnClearHistory.setVisibility(list.isEmpty() ? View.GONE : View.VISIBLE);
             txtCountLabel.setText(list.size() + " produit(s) consulté(s)");
 
-            iconEmpty.setText("🕒");
+            iconEmpty.setImageResource(R.drawable.ic_history);
             txtEmptyTitle.setText(R.string.empty_history_title);
             txtEmptySubtitle.setText(R.string.empty_history_subtitle);
         } else {
@@ -104,7 +105,7 @@ public class FavoritesFragment extends Fragment implements ProductAdapter.OnProd
             btnClearHistory.setVisibility(View.GONE);
             txtCountLabel.setText(list.size() + " favori(s) enregistré(s)");
 
-            iconEmpty.setText("💚");
+            iconEmpty.setImageResource(R.drawable.ic_nav_favorites);
             txtEmptyTitle.setText(R.string.empty_favorites_title);
             txtEmptySubtitle.setText(R.string.empty_favorites_subtitle);
         }

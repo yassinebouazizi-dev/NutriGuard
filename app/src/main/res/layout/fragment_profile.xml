@@ -92,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Yassine Bouazizi"
+                    android:text="Mon Profil"
                     android:textColor="@color/text_primary"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:text="bouazizi.yassine55@gmail.com"
+                    android:text="Assistant nutritionnel &amp; santé"
                     android:textColor="@color/text_secondary"
                     android:textSize="13sp" />
 

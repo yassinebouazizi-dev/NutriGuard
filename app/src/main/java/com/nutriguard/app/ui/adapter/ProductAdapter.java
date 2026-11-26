@@ -119,7 +119,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             // Real-time Allergen conflict check
             List<Allergen> detected = AllergenChecker.checkProductAllergens(product, userPrefs);
             if (!detected.isEmpty()) {
-                StringBuilder sb = new StringBuilder("⚠️ Contient ");
+                StringBuilder sb = new StringBuilder("Contient : ");
                 for (int i = 0; i < detected.size(); i++) {
                     sb.append(detected.get(i).getName());
                     if (i < detected.size() - 1) {
